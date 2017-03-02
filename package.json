@@ -1,0 +1,32 @@
+{
+  "name": "protomorph",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js --bail"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/safezero/protomorph.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/safezero/protomorph/issues"
+  },
+  "homepage": "https://github.com/safezero/protomorph#readme",
+  "devDependencies": {
+    "amorph-bignumber": "^1.0.2",
+    "chai": "^3.5.0",
+    "chai-amorph": "0.0.2",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "amorph": "^1.1.0",
+    "amorph-buffer": "^1.1.4",
+    "arguguard": "0.0.5",
+    "protobufjs": "^6.6.4",
+    "testable-error": "^0.1.1"
+  }
+}
