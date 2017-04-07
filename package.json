@@ -25,7 +25,7 @@
   "dependencies": {
     "amorph": "^1.1.0",
     "amorph-buffer": "^1.1.4",
-    "arguguard": "^0.0.6",
+    "arguguard": "^0.6.2",
     "protobufjs": "^6.6.4",
     "testable-error": "^0.1.1"
   }
