@@ -28,7 +28,7 @@ function crawl(object, target, func) {
 exports.encode = function encode(protoType, _pojo) {
   arguguard('encode', [ProtoType, Object], arguments)
   const pojo = crawl(_pojo, Amorph, (amorph) => {
-    return amorph.to('buffer')
+    return amorph.to('uint8Array')
   })
   return new Amorph(protoType.encode(protoType.create(pojo)).finish(), 'buffer')
 }
@@ -37,7 +37,7 @@ exports.decode = function decode(protoType, encoded) {
   arguguard('decode', [ProtoType, Amorph], arguments)
   const _pojo = protoType.decode(encoded.to('buffer'))
   const pojo = crawl(_pojo, Buffer, (buffer) => {
-    return new Amorph(buffer, 'buffer')
+    return new Amorph(buffer, 'uint8Array')
   })
   return pojo
 }
