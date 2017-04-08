@@ -30,14 +30,14 @@ exports.encode = function encode(protoType, _pojo) {
   const pojo = crawl(_pojo, Amorph, (amorph) => {
     return amorph.to('uint8Array')
   })
-  return new Amorph(protoType.encode(protoType.create(pojo)).finish(), 'buffer')
+  return new Amorph(protoType.encode(protoType.create(pojo)).finish(), 'uint8Array')
 }
 
 exports.decode = function decode(protoType, encoded) {
   arguguard('decode', [ProtoType, Amorph], arguments)
-  const _pojo = protoType.decode(encoded.to('buffer'))
-  const pojo = crawl(_pojo, Buffer, (buffer) => {
-    return new Amorph(buffer, 'uint8Array')
+  const _pojo = protoType.decode(encoded.to('uint8Array'))
+  const pojo = crawl(_pojo, Uint8Array, (uint8Array) => {
+    return new Amorph(uint8Array, 'uint8Array')
   })
   return pojo
 }
